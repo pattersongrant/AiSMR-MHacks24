@@ -8,12 +8,18 @@ struct Test: View {
     
     var body: some View {
         VStack {
+
+            ScrollView {
+                Text(aiResponse)
+                    .padding()
+            }
+            .padding(.top, 100)
             Text("AiSMR Chat")
                 .font(.largeTitle)
                 .padding()
             
             TextEditor(text: $userMessage)
-                .frame(height: 150)
+                .frame(height: 100)
                 .border(Color.gray, width: 1)
                 .padding()
             
@@ -28,8 +34,8 @@ struct Test: View {
             }
             
             ScrollView {
-                Text(aiResponse)
-                    .padding()
+                
+
             }
         }
         .onAppear {
